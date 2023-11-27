@@ -78,7 +78,7 @@ export default function About(props) {
                 <div className="hd">Why People Believe in Us</div>
                 <p><small className="text-muted">Always render more and better service than <br />is expected of you, no matter what your ask may be.</small></p>
                 <div className="row d-flex justify-content-around">
-                    <div className="card col-md-3 col-12">
+                    <div className="card col-md-3  my-2 col-12">
                         <div className="card-content">
                             <div className="card-body"> <img className="img" src="https://i.imgur.com/S7FJza5.png" alt='Demo'/>
                                 <div className="shadow"></div>
@@ -89,7 +89,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="card col-md-3 col-12 ml-2">
+                    <div className="card col-md-3  my-2 col-12 ml-2">
                         <div className="card-content">
                             <div className="card-body"> <img className="img" src="https://i.imgur.com/xUWJuHB.png" alt='Demo'/>
                                 <div className="card-title"> We're Unbiased </div>
@@ -99,7 +99,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="card col-md-3 col-12 ml-2">
+                    <div className="card col-md-3  my-2 col-12 ml-2">
                         <div className="card-content">
                             <div className="card-body"> <img className="img" style={{ height: 100, widows: 100 }} src="https://i.imgur.com/rG3CGn3.png" alt='Demo'/>
                                 <div className="card-title"> We Guide you </div>

@@ -29,6 +29,30 @@ export default function TextForm(props) {
     return text.trim().length > 0 ? "success" : "error";
   };
 
+  const ReverceString = () => {
+    let tempStr = text;
+    setText(tempStr.split("").reverse().join(""));
+    return text.trim().length > 0 ? "success" : "error";
+  };
+
+  function extractEmails(text) {
+    const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+    const emails = text.match(emailRegex);
+
+    return emails || [];
+  }
+
+  const getEmails = () => {
+    setText((extractEmails(text)).join(" "));
+    return text.trim().length > 0 ? "success" : "error";
+  }
+
+  const extractNumbers = () => {
+    var numb = text.match(/\d+/g);
+    setText(numb?.toString() || "");
+    return text.trim().length > 0 ? "success" : "error";
+  }
+
   const ClearText = () => {
     setText("");
     return "success";
@@ -45,12 +69,15 @@ export default function TextForm(props) {
           onChange={AreaTextChange}
         ></textarea>
 
-        <div className="d-flex">
-          <AlertMsg BtnFun={ConverUpprCase} btnName="Convert To Uppercase" themeType={props.theme} msg="Suseesfully conver to Uppercase!" />
-          <AlertMsg BtnFun={ConverLowerCase} btnName="Convert To Lowercase" themeType={props.theme} msg="Suseesfully conver to Lowercase!" />
-          <AlertMsg BtnFun={CopyText} btnName="Copy Text" themeType={props.theme} msg="Suseesfully Copy!" />
-          <AlertMsg BtnFun={RemoveExtraSpace} btnName="Remove Extra Spaces" themeType={props.theme} msg="Suseesfully remove extra space!" />
-          <AlertMsg BtnFun={ClearText} btnName="Clear Text" themeType={props.theme} msg="Suseesfully Clear!" />
+        <div className="d-flex flex-wrap">
+          <AlertMsg BtnFun={ConverUpprCase} btnName="Convert To Uppercase" themeType={props.theme} msg="sucessfully conver to Uppercase!" />
+          <AlertMsg BtnFun={ConverLowerCase} btnName="Convert To Lowercase" themeType={props.theme} msg="sucessfully conver to Lowercase!" />
+          <AlertMsg BtnFun={CopyText} btnName="Copy Text" themeType={props.theme} msg="sucessfully Copy!" />
+          <AlertMsg BtnFun={RemoveExtraSpace} btnName="Remove Extra Spaces" themeType={props.theme} msg="sucessfully remove extra space!" />
+          <AlertMsg BtnFun={getEmails} btnName="Extract Emails" themeType={props.theme} msg="Emails Extract sucessfully!" />
+          <AlertMsg BtnFun={ReverceString} btnName="Reverce Text" themeType={props.theme} msg="Text Reverce sucessfully!" />
+          <AlertMsg BtnFun={extractNumbers} btnName="Extract Numbers" themeType={props.theme} msg="Numbers Extract sucessfully!" />
+          <AlertMsg BtnFun={ClearText} btnName="Clear Text" themeType={props.theme} msg="sucessfully Clear!" />
         </div>
 
 

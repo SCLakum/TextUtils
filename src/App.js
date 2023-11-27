@@ -31,7 +31,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-    <Footer title="ElectroApp"/>
+    <Footer title={appName}/>
     </>
   );
 }
