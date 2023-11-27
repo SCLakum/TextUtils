@@ -5,7 +5,7 @@ import { Outlet, Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg sticky-top bg-body-tertiary">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             {props.title}
@@ -45,24 +45,6 @@ export default function Navbar(props) {
       <Outlet />
 
     </>
-
-    // <>
-    //   <nav>
-    //     <ul>
-    //       <li>
-    //         <Link to="/">Home</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/blogs">Blogs</Link>
-    //       </li>
-    //       <li>
-    //         <Link to="/contact">Contact</Link>
-    //       </li>
-    //     </ul>
-    //   </nav>
-
-    //   <Outlet />
-    // </>
   );
 }
 
